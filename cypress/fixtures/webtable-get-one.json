@@ -1,0 +1,12 @@
+[
+  {
+    "_id": {
+      "$oid": "1234567890"
+    },
+    "FirstName": "John",
+    "LastName": "Doe",
+    "Email": "john@doe.com",
+    "Phone": "987654321",
+    "Gender": "Male"
+  }
+]

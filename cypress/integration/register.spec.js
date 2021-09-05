@@ -1,10 +1,25 @@
 /// <reference types="cypress" />
 
-let Chance = require('chance');
+import Chance from 'chance';
 let chance = new Chance();
 
 context('Register', () => {
   it('should register new user', () => {
+    // routes
+    cy.server();
+    cy.route(
+      'POST',
+      '**/api/1/databases/userdetails/collections/newtable?**'
+    ).as('postNewTable');
+    cy.route(
+      'POST',
+      '**/api/1/databases/userdetails/collections/usertable?**'
+    ).as('postUserTable');
+    cy.route(
+      'GET',
+      '**/api/1/databases/userdetails/collections/newtable?**'
+    ).as('getNewTable');
+
     // baseUrl + Register.html
     cy.visit('Register.html');
 
@@ -34,5 +49,19 @@ context('Register', () => {
 
     // click
     cy.get('button#submitbtn').click();
+
+    cy.wait('@postNewTable').then((resNewTable) => () => {
+      expect(resNewTable.status).to.eq(200);
+    });
+
+    cy.wait('@postUserTable').then((resUserTable) => () => {
+      expect(resUserTable.status).to.eq(200);
+    });
+
+    cy.wait('@getNewTable').then((resNewTable) => () => {
+      expect(resNewTable.status).to.eq(200);
+    });
+
+    cy.url().should('contain', 'WebTable');
   });
 });
