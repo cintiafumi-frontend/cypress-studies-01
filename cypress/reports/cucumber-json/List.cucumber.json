@@ -1,0 +1,93 @@
+[
+  {
+    "description": "  As user, I want to access a list\n  To see my recorded personal data",
+    "keyword": "Feature",
+    "name": "List",
+    "line": 1,
+    "id": "list",
+    "tags": [],
+    "uri": "List.feature",
+    "elements": [
+      {
+        "id": "list;list-empty-records",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "List empty records",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "a website without records",
+            "result": {
+              "status": "passed",
+              "duration": 402000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "access the list",
+            "result": {
+              "status": "passed",
+              "duration": 24191000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should see an empty list",
+            "result": {
+              "status": "passed",
+              "duration": 179000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "list;list-one-record",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "List one record",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "a website with one record",
+            "result": {
+              "status": "passed",
+              "duration": 623000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "access the list",
+            "result": {
+              "status": "passed",
+              "duration": 9036000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I should see only one record",
+            "result": {
+              "status": "passed",
+              "duration": 669000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
