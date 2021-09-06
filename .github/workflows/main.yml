@@ -41,6 +41,7 @@ jobs:
 
       # Run tests with cucumber
       - run: npm run cy:run:cucumber
+        continue-on-error: true
       
       # Generate html report
       - run: npm run report:cucumber
