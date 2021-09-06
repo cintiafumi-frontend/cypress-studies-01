@@ -113,3 +113,11 @@ cypress/videos
 
 # MacOS
 .DS_Store
+
+# mocha reports
+mochawesome-report
+
+# cucumber-reports
+cypress/reports/index.html
+cypress/reports/index.html.json
+cypress/reports/cucumber-json/**
