@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "cy:open": "npx cypress open",
-    "cy:run": "npx cypress run"
+    "cy:run": "npx cypress run",
+    "cy:open:cucumber": "npx cypress open --config-file cypress-cucumber.json",
+    "cy:run:cucumber": "npx cypress run --config-file cypress-cucumber.json --spec **/All.features"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,10 @@
   "devDependencies": {
     "chance": "^1.1.7",
     "cypress": "4.10.0",
+    "cypress-cucumber-preprocessor": "^4.2.0",
     "cypress-file-upload": "^5.0.8"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }
